@@ -3,6 +3,7 @@
 namespace Jenssegers\Mongodb;
 
 use Illuminate\Database\Connection as BaseConnection;
+use Illuminate\Support\Arr;
 use MongoDB\Client;
 
 class Connection extends BaseConnection
@@ -110,6 +111,27 @@ class Connection extends BaseConnection
     public function getMongoClient()
     {
         return $this->connection;
+    }
+
+    /**
+     * Get the database connection name.
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->getConfig('name');
+    }
+
+    /**
+     * Get an option from the configuration options.
+     *
+     * @param  string|null $option
+     * @return mixed
+     */
+    public function getConfig($option = null)
+    {
+        return Arr::get($this->config, $option);
     }
 
     /**
