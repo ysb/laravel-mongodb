@@ -99,7 +99,7 @@ abstract class EmbedsOneOrMany extends Relation
      */
     public function get($columns = ['*'])
     {
-        return $this->getResults()->get($columns);
+        return $this->getResults();
     }
 
     /**
