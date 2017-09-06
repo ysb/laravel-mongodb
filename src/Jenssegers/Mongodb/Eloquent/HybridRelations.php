@@ -210,11 +210,13 @@ trait HybridRelations
     /**
      * Define a many-to-many relationship.
      *
-     * @param  string $related
-     * @param  string $collection
-     * @param  string $foreignKey
-     * @param  string $otherKey
-     * @param  string $relation
+     * @param  string  $related
+     * @param  string  $collection
+     * @param  string  $foreignKey
+     * @param  string  $otherKey
+     * @param  string  $parentKey
+     * @param  string  $relatedKey
+     * @param  string  $relation
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function belongsToMany($related, $collection = null, $foreignKey = null, 
